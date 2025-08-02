@@ -9,3 +9,6 @@ def home(request):
 def about(request):
     return HttpResponse("<h1> Welcome to About page</h1>")
 
+def Contact(request):
+    return  HttpResponse("<h1> Contact Information: </h1>")
+
