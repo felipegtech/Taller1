@@ -1,2 +1,71 @@
-<h1>Welcome to Home Page, {{name}}</h1>
-<h2>This is the full home page</h2>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Reviews</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      text-align: center;
+      background-color: #343a40;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-4">
+    <h1 class="mb-4 text-center">🎬 Movie Reviews</h1>
+
+    <!-- Search form -->
+    <form action="" method="get" class="mb-5">
+      <div class="mb-3">
+        <label for="searchMovie" class="form-label">Buscar película:</label>
+        <input type="text" class="form-control" name="searchMovie" id="searchMovie" placeholder="Batman, Narnia, Matrix..." />
+      </div>
+      <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <p>Resultados para: <strong>{{ searchTerm }}</strong></p>
+
+    <!-- Movie list -->
+    <div class="row">
+      {% for movie in movies %}
+        <div class="col-md-4 mb-4 d-flex">
+          <div class="card h-100 shadow-sm w-100">
+            <img src="{{ movie.image.url }}" class="card-img-top" alt="{{ movie.title }}" style="height: 300px; object-fit: cover;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ movie.title }}</h5>
+              <p class="card-text">{{ movie.descripcion }}</p>
+              {% if movie.url %}
+                <a href="{{ movie.url }}" class="btn btn-sm btn-outline-primary mt-auto">Ver más</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <!-- Optional aside -->
+    <aside class="mt-4 text-muted text-center">
+      <p>Contenido adicional o enlaces relacionados.</p>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Felipe Gómez. Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
