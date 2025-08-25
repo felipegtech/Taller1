@@ -1,4 +1,4 @@
-# 🎬 MovieReviews – Workshop 1 
+# 🎬 MovieReviews – Workshop 2
 
 This project was developed as part of workshop 1 of the web development course with Django. The application allows users to search for movies, view descriptions , view descriptions, images, and access related external links.
 
@@ -53,7 +53,9 @@ This project was developed as part of workshop 1 of the web development course w
 - Django 5.2.4
 - Bootstrap 5.3.7 (via CDN)
 - SQLite (default database)
-
+- Pillow
+- Matplotlib
+- Pandas
 ---
 
      
